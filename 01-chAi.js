@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const API_KEY = process.env.OPENAI_API_KEY;
+const BASE_URL = process.env.BASE_URL;
 
 export const apiKeyChecker = () => {
   if (!API_KEY) {
@@ -16,6 +17,7 @@ export const checkOpenAI = async () => {
   const openai = (await import("openai")).default;
   const client = new openai({
     apiKey: API_KEY,
+    baseURL: BASE_URL
   });
 
   if (!client) {

@@ -1,4 +1,5 @@
-import { checkOpenAI } from "./01-chAi.js";
+import {checkOpenAI} from "./01-chAI.js"
+
 
 const client = await checkOpenAI();
 const model = "gemini-3.6-flash";
